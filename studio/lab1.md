@@ -92,15 +92,15 @@
      **<center>Figure 12-1. Open Git Repository in Terminal.</center>**  
 
      터미널 화면에서 아래 명령어를 복사 후 붙여넣기 후 엔터(Enter)키를 치면 코드 다운로드가 완료됩니다. 다운로드가 정상적으로 완료되었다면, 좌측 화면에 
-     `sagemaker-studio-workshop-kr-jinsung` 폴더가 나타납니다. (`Figure 13.` 참조)
+     `sagemaker-studio-workshop-kr-ctc` 폴더가 나타납니다. (`Figure 13.` 참조)
 
       ```
-      git clone https://github.com/tweety0201/sagemaker-studio-workshop-kr-jinsung.git
+      git clone https://github.com/tweety0201/sagemaker-studio-workshop-kr-ctc.git
       ```
       ![img13](./images/fig13-1.png)
       **<center>Figure 13. 핸즈온 코드 다운로드 완료 화면.</center>**    
 
-1. `Figure 13.`의 `sagemaker-studio-workshop-kr-jinsung` 폴더를 더블클릭하여 관련 파일과 폴더들이 정상적으로 생성되었는지 확인합니다. (`Figure 14.` 참조)
+1. `Figure 13.`의 `sagemaker-studio-workshop-kr-ctc` 폴더를 더블클릭하여 관련 파일과 폴더들이 정상적으로 생성되었는지 확인합니다. (`Figure 14.` 참조)
 
     ![img14](./images/fig14-1.png)
     **<center>Figure 14. 핸즈온 코드.</center>**    
