@@ -9,7 +9,7 @@
 4개 모듈 모두 진행 시, 실습 시간은 약 3시간-3시간 반이 소요됩니다. (숙련자의 경우 1시간 반-2시간 정도 소요됩니다.)
 
 ### Requirements 
-- AWS Region: **Ohio** (필수)
+- AWS Region: **Seoul** 
 - Browser: 최신 버전의 **Chrome, Firefox**를 사용하세요.
 - 주의 사항: 노트북(Notebook) 안의 Code Cell에서 코드 실행 후 결과 값이 나오는 데는 수 초가 걸리며, 학습 Job을 실행하는 경우 수 분에서 수십 분이 걸릴 수도 있습니다. 
 
