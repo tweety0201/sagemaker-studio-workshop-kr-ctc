@@ -27,7 +27,7 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 `sagemaker-studio-workshop-kr/autopilot` 경로로 이동합니다.
 1. 하단의 파일들 중 `step1-prepare-dataset.ipynb`를 더블 클릭하여 Jupyter 노트북을 실행합니다.
 
-    ![img1](./images/fig01.png)
+    ![img1](./images/fig01-1.png)
     **<center>Figure 1. 폴더 이동 화면.</center>**    
 
 1. Select Kernel 창이 나온다면 `Figure 2.`과 같이 `Python 3 (Base Python)`을 선택하고 Select 버튼을 클릭합니다. 만약 Select Kernel 창이 먼저 뜨지 않고 곧바로 `Figure 3.`의 화면이 출력된다면, `Figure 3.` 우측 상단의 붉은색 테두리 문자를 클릭해서 Select Kernel 창을 오픈한 다음 kernel을 선택합니다.
@@ -57,7 +57,7 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 
 1. 코드가 아래 화면처럼 정상적으로 실행되었는지 확인합니다. 순차적으로 Code Cell을 정상적으로 실행하였다면 Code Cell 왼쪽이 `Figure 3-3.`처럼 [8]이 되어야 합니다.
 
-    ![img3-3](./images/fig03-3.png)
+    ![img3-3](./images/fig03-3-1.png)
     **<center>Figure 3-3. Code Cell 실행 완료 화면.</center>**    
 
 
@@ -95,12 +95,12 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 
 
     - Select the machine learning problem type 에서 `Binary classification`을 선택하세요.
-
+    
     - Objective metric에서 `F1`을 선택하세요.
-
+    
     - Do you want to run a complete experiment? 에서 `No, run a pilot to create a notebook with candidate definitions`을 선택하세요. 참고로, `Yes` 선택 시에는 `Create Experiment` 이후 모든 과정이 자동으로 수행되지만, 10개의 candidate 모델을 생성하고 250회의 하이퍼파라메터 최적화 수행으로 약 1시간 30분이 소요되기에 본 핸즈온에는 적합하지 않습니다.<br>
     따라서, 본 핸즈온에서는 빠른 실습을 위해 step 이후 자동으로 생성되는 Jupyter notebook을 수정하여 2개의 candidate 모델과 8회의 하이퍼파라메터 최적화를 수행하겠습니다.
-
+    
     - 우측 최하단의 `Create Experiment` 버튼을 클릭합니다.
 
 1. `Figure 6.` 처럼 Analyzing Data > Candiate Definitions Generated 를 거쳐 
