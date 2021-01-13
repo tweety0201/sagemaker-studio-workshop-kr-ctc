@@ -67,49 +67,46 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 
 실습 시간은 약 5-10분 소요됩니다.
 
-1. Amazon SageMaker Studio 화면의 왼쪽 상단의 아이콘 중 컵 모양의 아이콘 클릭 후, `Create Experiment` 버튼을 클릭합니다. (`Figure 4.` 참조)
+1. Amazon SageMaker Studio 화면의 왼쪽 하단의 아이콘 중 삼각형 모양의 아이콘 클릭 후, `Projects` 콤보 박스를 클릭하여  `Experiments and trials` 메뉴를 선택 합니다. (`Figure 4.` 참조)
 
-    ![img4](./images/fig04.png)
-    **<center>Figure 4. Create Experiment 선택 화면.</center>**    
+    ![img4](./images/fig04-1.png)
+    **<center>Figure 4-1. Experiments and trials 선택 화면.</center>**    
+
+1.  (`Figure 4.` 참조)
+
+    ![img4](./images/fig04-2.png)
+    **<center>Figure 4-2. Create Experiment 선택 화면.</center>**    
 
 1. CLI나 API 호출 없이 콘솔 상에서 빠르고 간단하게 Autopilot을 수행해 보겠습니다. 
 `Figure 5.`를 참조하여 아래의 지침대로 설정 항목의 값들을 입력해 주세요.
 
-    ![img5](./images/fig05-1.png)
+    ![img5](./images/fig05-2.png)
     **<center>Figure 5. Autopilot 생성 화면.</center>**   
 
-    - Experiment Name 에서 `autopilot-hol-[YOUR-OWN-NAME]`을 입력하세요.<br>
+    - **Experiment Name** 에서 `autopilot-hol-[YOUR-OWN-NAME]`을 입력하세요.<br>
     (예: `autopilot-hol-gildong`)
-
-    - **Input data location (S3 bucket)** 에서 "Find S3 bucket" 을 선택합니다.
-	- (1) "S3 bucket name" 에서 sagemaker-XXXX-XXXXX (예: sagemaker-us-east-2-101606582575) 를 선택합니다. (기존에 다른 이름으로 버킷을 생성하였다고 하면, 그 버킷을 선택하세요)
-	- (2) "S3 object key prefix" 에서 automl-house-price/input/automl-train.csv 를 선택합니다.
-
-    - Target attribute name 에서 `Churn?`을 입력하세요. 
-
-    - **Output data location (S3 bucket)** 에서 "Find S3 bucket" 을 선택합니다.
-	- (1) S3 bucket name에서 sagemaker-XXXX-XXXXX (예: sagemaker-us-east-2-101606582575) 를 선택합니다. (기존에 다른 이름으로 버킷을 생성하였다고 하면, 그 버킷을 선택하세요)
-	- (2) "Enter S3 bucket location" 을 선택합니다.
-		- "S3 bucket address" 안에
-		- "automl-house-price/output"를 s3://sagemaker-XXXX-XXXXX/ 이후에 복사합니다. 최종적으로 이와 같이 되어야 합니다. (예: s3://sagemaker-us-east-2-101606582575/automl-house-price/output )
-
-
-    - Select the machine learning problem type 에서 `Binary classification`을 선택하세요.
-    
-    - Objective metric에서 `F1`을 선택하세요.
-    
-    - Do you want to run a complete experiment? 에서 `No, run a pilot to create a notebook with candidate definitions`을 선택하세요. 참고로, `Yes` 선택 시에는 `Create Experiment` 이후 모든 과정이 자동으로 수행되지만, 10개의 candidate 모델을 생성하고 250회의 하이퍼파라메터 최적화 수행으로 약 1시간 30분이 소요되기에 본 핸즈온에는 적합하지 않습니다.<br>
-    따라서, 본 핸즈온에서는 빠른 실습을 위해 step 이후 자동으로 생성되는 Jupyter notebook을 수정하여 2개의 candidate 모델과 8회의 하이퍼파라메터 최적화를 수행하겠습니다.
-    
-    - 우측 최하단의 `Create Experiment` 버튼을 클릭합니다.
+ - **CONNECT YOUR DATA** 에서 "Find S3 bucket" 을 선택합니다.
+       - **S3 bucket name** 에서 `sagemaker-XXXX-XXXXX` (예: sagemaker-studio-gildong) 를 선택합니다. (기존에 다른 이름으로 버킷을 생성하였다고 하면, 그 버킷을 선택하세요)
+	        - S3 object key prefix 에서 automl-house-price/input/automl-train.csv 를 선택합니다.
+	 - **Target**  에서 `Churn?`을 입력하세요. 
+ - **Output data location (S3 bucket)** 에서 "Find S3 bucket" 을 선택합니다.
+       - **S3 bucket name**에서 sagemaker-XXXX-XXXXX (예: sagemaker-studio-gildong) 를 선택합니다. (기존에 다른 이름으로 버킷을 생성하였다고 하면, 그 버킷을 선택하세요)
+    - **Dataset directory name** 에 "automl-house-price/output"를 입력합니다. 
+       	- **S3 bucket address** 안에
+	    	- "automl-house-price/output"를 s3://sagemaker-XXXX-XXXXX/ 이후에 복사합니다. 최종적으로 이와 같이 되어야 합니다. (예: s3://sagemaker-studio-gildong/automl-house-price/output )
+	- **Select the machine learning problem type** 에서 `Binary classification`을 선택하세요.
+	- **Objective metric**에서 `F1`을 선택하세요.
+	- **Do you want to run a complete experiment?** 에서 `No, run a pilot to create a notebook with candidate definitions`을 선택하세요. 참고로, `Yes` 선택 시에는 `Create Experiment` 이후 모든 과정이 자동으로 수행되지만, 10개의 candidate 모델을 생성하고 250회의 하이퍼파라메터 최적화 수행으로 약 1시간 30분이 소요되기에 본 핸즈온에는 적합하지 않습니다.<br>
+	    따라서, 본 핸즈온에서는 빠른 실습을 위해 step 이후 자동으로 생성되는 Jupyter notebook을 수정하여 2개의 candidate 모델과 8회의 하이퍼파라메터 최적화를 수행하겠습니다.
+	- 우측 최하단의 `Create Experiment` 버튼을 클릭합니다.
 
 1. `Figure 6.` 처럼 Analyzing Data > Candiate Definitions Generated 를 거쳐 
 2개의 Jupyter notebook이 자동으로 생성됩니다. 이 과정은 약 5분 가량 소요됩니다. 만약 5분 경과 후에도 `Figure 7.` 로 넘어가지 않고 `Figure 6.`이 계속 출력된다면 `Figure 6.` 좌측 상단의 붉은색 영역 안의 새로고침 버튼을 클릭하여 작업 완료 여부를 확인합니다.
 
-    ![img6](./images/fig06.png)
+    ![img6](./images/fig06-1.png)
     **<center>Figure 6. Analyzing Data 진행 화면.</center>**   
 
-    ![img7](./images/fig07.png)
+    ![img7](./images/fig07-1.png)
     **<center>Figure 7. Analyzing Data 완료 화면.</center>**   
 
 1. `Figure 7.` 우측 상단에 `Open candidate generation notebook` 버튼과 `Open data exploration notebook` 버튼이 정상적으로 생성되었는지 확인합니다.
@@ -126,11 +123,11 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 1. `Figure 7.` 우측 상단에 `Open data exploration notebook`을 클릭하여 Jupyter 노트북을 실행합니다. (`Figure 8.` 참조)<br>
 이 노트북 파일은 탐색적 데이터 분석(EDA)을 자동으로 수행한 내역이 저장되어 있으며, 우측 상단의 `Import notebook` 버튼을 클릭 후 노트북 사본을 생성하여 자유롭게 내용 수정이 가능합니다. 
 
-    ![img8](./images/fig08.png)
+    ![img8](./images/fig08-1.png)
     **<center>Figure 8. Data exploration notebook 화면 1.</center>**   
 
 1. 노트북의 Code Cell과 Markdown Cell을 살펴봅니다. SageMaker Autopilot은 수치형(Numerical) 변수의 cardinality가 낮다면 자동으로 범주형(Categorical) 변수로 간주하는 것을 알 수 있습니다. 참고로 범주형 변수에 대한 전처리도 SageMaker Autopilot에서 자동으로 수행하기 때문에 별도의 수치 변환 인코딩이나 원핫(One-hot) 인코딩을 수행하실 필요가 없습니다.
-    ![img9](./images/fig09.png)
+    ![img9](./images/fig09-1.png)
     **<center>Figure 9. Data exploration notebook 화면 2.</center>**   
 
 1. Data exploration 노트북을 모두 살펴보았다면, `Figure 7.` 우측 상단의 `Open candidate generation notebook`을 클릭하여 Jupyter 노트북을 실행합니다. (`Figure 10.` 참조)<br>
@@ -168,7 +165,7 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
 `automl_interactive_runner.fit_data_transformers(parallel_jobs=[임의의 숫자])`를 실행합니다.
 만약 이 Code Cell에서 Resource Limit 오류가 발생한다면 `parallel_jobs=2` 로 수정하여 다시 실행합니다. 참고로, 이 Code Cell을 수행하는 과정은 약 5-6분 가량 소요됩니다.
 
-    ![img15](./images/fig15.png)
+    ![img15](./images/fig15-1.png)
     **<center>Figure 15. Data Transformation 수행.</center>**    
 
 1. `Create Multi-Algorithm Tuner`가 표시된 Markdown Cell 다음의 Code Cell의 `HyperparameterTuner.create(..)` 메소드의 인자값들을 다음과 같이 수정합니다. 
@@ -186,17 +183,17 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
     )
     ```
 
-    ![img16](./images/fig16.png)
+    ![img16](./images/fig16-1.png)
     **<center>Figure 16. 하이퍼파라메터 튜닝 수행 횟수 조정.</center>** 
 
 1. `Run Multi-Algorithm Tuning`이 표시된 Markdown Cell 다음의 Code Cell을 실행합니다. 참고로, 이 Code Cell을 수행하는 과정은 약 7-8분 가량 소요됩니다. (`Figure 17.` 참조)
 
-    ![img17](./images/fig17.png)
+    ![img17](./images/fig17-1.png)
     **<center>Figure 17. 하이퍼파라메터 튜닝.</center>** 
 
 1. (Optional) SageMaker 콘솔 메뉴에서 SageMaker > Hyperparameter tuning jobs'를 선택하여 생성된 하이퍼파라메터 training jobs들을 살펴봅니다. (`Figure 18.` 참조)
 
-    ![img18](./images/fig18.png)
+    ![img18](./images/fig18-1.png)
     **<center>Figure 18. Hyperparameter tuning jobs 확인.</center>**   
 
 <br>
@@ -268,7 +265,9 @@ Amazon SageMaker Autopilot을 사용하기 위한 준비 작업은 매우 간단
     ![img24](./images/fig24.png)
     **<center>Figure 24. Endpoint 생성 확인.</center>**  
 
-1. 좌측의 아이콘들 중 아래에서 2번째 아이콘을 클릭 후, `AutoML-autopilot--..` endpoint를 클릭 후, `Enable monitoring` 버튼을 클릭합니다. 이후, 자동으로 생성된 SageMaker Model Monitor Jupyter 노트북을 확인합니다. (`Figure 25.`, `Figure 26.` 참조)
+1. 좌측의 아이콘들 중 아래에서 2번째 아이콘을 클릭 후, `AutoML-autopilot--..` endpoint를 클릭 후, `Enable monitoring` 버튼을 클릭합니다. 이후, 자동으로 생성된 SageMaker Model Monitor Jupyter 노트북을 확인합니다. (`Figure 25.`, `Figure 26.` 참조). 
+
+    **※ 현재 data capture 설정이 되지 않기 때문에 autopilot에서 model monitor jupyter notebook 이 자동으로 생성되지 않음. 해당 기능 재확인 필요**
 
     ![img25](./images/fig25.png) 
     **<center>Figure 25. Enable monitoring.</center>**  
